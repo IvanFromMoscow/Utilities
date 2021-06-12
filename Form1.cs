@@ -48,7 +48,35 @@ namespace Utilities
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            lblRandom.Text = rnd.Next(Convert.ToInt32(nudMinRandomRange.Value), Convert.ToInt32(nudMaxRandomRange.Value) + 1).ToString();
+            int n = rnd.Next(Convert.ToInt32(nudMinRandomRange.Value), Convert.ToInt32(nudMaxRandomRange.Value) + 1);
+            lblRandom.Text = n.ToString();
+            if(cbRandomIsRepeat.Checked)
+            {
+                int i = 0;
+                while (tbRandomList.Text.IndexOf(n.ToString()) != -1)
+                {
+                    n = rnd.Next(Convert.ToInt32(nudMinRandomRange.Value), Convert.ToInt32(nudMaxRandomRange.Value) + 1);
+                    i++;
+                    if (i > 1000) break;
+                    
+                }
+                if (i < 1000) tbRandomList.AppendText(n + Environment.NewLine);
+                
+            }
+            else
+            {
+                tbRandomList.AppendText(n + Environment.NewLine);
+            }
+        }
+
+        private void BtnRandomClear_Click(object sender, EventArgs e)
+        {
+            tbRandomList.Clear();
+        }
+
+        private void BtnRandomCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbRandomList.Text);
         }
     }
 }
