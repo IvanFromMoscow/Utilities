@@ -41,9 +41,18 @@
             this.btnMinus = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.lblIndicator = new System.Windows.Forms.Label();
+            this.nudMinRandomRange = new System.Windows.Forms.NumericUpDown();
+            this.nudMaxRandomRange = new System.Windows.Forms.NumericUpDown();
+            this.btnRandom = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblRandom = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinRandomRange)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxRandomRange)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -121,12 +130,18 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lblRandom);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.label1);
+            this.tabPage2.Controls.Add(this.btnRandom);
+            this.tabPage2.Controls.Add(this.nudMaxRandomRange);
+            this.tabPage2.Controls.Add(this.nudMinRandomRange);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(792, 261);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Генератор";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnPlus
@@ -172,6 +187,87 @@
             this.lblIndicator.TabIndex = 3;
             this.lblIndicator.Text = "0";
             // 
+            // nudMinRandomRange
+            // 
+            this.nudMinRandomRange.Location = new System.Drawing.Point(146, 54);
+            this.nudMinRandomRange.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.nudMinRandomRange.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMinRandomRange.Name = "nudMinRandomRange";
+            this.nudMinRandomRange.Size = new System.Drawing.Size(77, 26);
+            this.nudMinRandomRange.TabIndex = 0;
+            this.nudMinRandomRange.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // nudMaxRandomRange
+            // 
+            this.nudMaxRandomRange.Location = new System.Drawing.Point(146, 127);
+            this.nudMaxRandomRange.Maximum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.nudMaxRandomRange.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudMaxRandomRange.Name = "nudMaxRandomRange";
+            this.nudMaxRandomRange.Size = new System.Drawing.Size(77, 26);
+            this.nudMaxRandomRange.TabIndex = 1;
+            this.nudMaxRandomRange.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // btnRandom
+            // 
+            this.btnRandom.Location = new System.Drawing.Point(247, 54);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(75, 30);
+            this.btnRandom.TabIndex = 2;
+            this.btnRandom.Text = "Задать";
+            this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(103, 56);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "От:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(103, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 20);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "До:";
+            // 
+            // lblRandom
+            // 
+            this.lblRandom.AutoSize = true;
+            this.lblRandom.Location = new System.Drawing.Point(254, 133);
+            this.lblRandom.Name = "lblRandom";
+            this.lblRandom.Size = new System.Drawing.Size(18, 20);
+            this.lblRandom.TabIndex = 5;
+            this.lblRandom.Text = "_";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -186,6 +282,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMinRandomRange)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaxRandomRange)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +305,12 @@
         private System.Windows.Forms.Button btnMinus;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label lblRandom;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRandom;
+        private System.Windows.Forms.NumericUpDown nudMaxRandomRange;
+        private System.Windows.Forms.NumericUpDown nudMinRandomRange;
     }
 }
 

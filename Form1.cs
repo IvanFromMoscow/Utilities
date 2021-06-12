@@ -13,9 +13,11 @@ namespace Utilities
     public partial class MainForm : Form
     {
         int count = 0;
+        Random rnd;
         public MainForm()
         {
             InitializeComponent();
+            rnd = new Random();
         }
 
         private void tsimExit_Click(object sender, EventArgs e)
@@ -42,6 +44,11 @@ namespace Utilities
         {
             count = 0;
             lblIndicator.Text = count.ToString();
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            lblRandom.Text = rnd.Next(Convert.ToInt32(nudMinRandomRange.Value), Convert.ToInt32(nudMaxRandomRange.Value) + 1).ToString();
         }
     }
 }
