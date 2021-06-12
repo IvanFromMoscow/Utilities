@@ -51,12 +51,21 @@
             this.btnRandomClear = new System.Windows.Forms.Button();
             this.btnRandomCopy = new System.Windows.Forms.Button();
             this.cbRandomIsRepeat = new System.Windows.Forms.CheckBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.rtbNotepad = new System.Windows.Forms.RichTextBox();
+            this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.tsmiInsertDate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiInsertTime = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsmiSaveNotepad = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiLoadNotepad = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinRandomRange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxRandomRange)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -64,6 +73,7 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripDropDownButton1,
+            this.toolStripDropDownButton3,
             this.toolStripDropDownButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -111,6 +121,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 32);
             this.tabControl1.Name = "tabControl1";
@@ -315,6 +326,82 @@
             this.cbRandomIsRepeat.Text = "без повторений";
             this.cbRandomIsRepeat.UseVisualStyleBackColor = true;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.rtbNotepad);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(792, 381);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Блокнот";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // rtbNotepad
+            // 
+            this.rtbNotepad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbNotepad.Location = new System.Drawing.Point(3, 3);
+            this.rtbNotepad.Name = "rtbNotepad";
+            this.rtbNotepad.Size = new System.Drawing.Size(786, 375);
+            this.rtbNotepad.TabIndex = 0;
+            this.rtbNotepad.Text = "";
+            // 
+            // toolStripDropDownButton3
+            // 
+            this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiInsertDate,
+            this.tsmiInsertTime,
+            this.toolStripMenuItem1,
+            this.tsmiSaveNotepad,
+            this.tsmiLoadNotepad});
+            this.toolStripDropDownButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton3.Image")));
+            this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
+            this.toolStripDropDownButton3.Size = new System.Drawing.Size(97, 29);
+            this.toolStripDropDownButton3.Text = "Блокнот";
+            // 
+            // tsmiInsertDate
+            // 
+            this.tsmiInsertDate.Name = "tsmiInsertDate";
+            this.tsmiInsertDate.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.D)));
+            this.tsmiInsertDate.Size = new System.Drawing.Size(331, 30);
+            this.tsmiInsertDate.Text = "Вставить дату";
+            this.tsmiInsertDate.Click += new System.EventHandler(this.TsmiInsertDate_Click);
+            // 
+            // tsmiInsertTime
+            // 
+            this.tsmiInsertTime.Name = "tsmiInsertTime";
+            this.tsmiInsertTime.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.T)));
+            this.tsmiInsertTime.Size = new System.Drawing.Size(331, 30);
+            this.tsmiInsertTime.Text = "Вставить время";
+            this.tsmiInsertTime.Click += new System.EventHandler(this.TsmiInsertTime_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(328, 6);
+            // 
+            // tsmiSaveNotepad
+            // 
+            this.tsmiSaveNotepad.Name = "tsmiSaveNotepad";
+            this.tsmiSaveNotepad.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.S)));
+            this.tsmiSaveNotepad.Size = new System.Drawing.Size(331, 30);
+            this.tsmiSaveNotepad.Text = "Сохранить";
+            this.tsmiSaveNotepad.Click += new System.EventHandler(this.TsmiSaveNotepad_Click);
+            // 
+            // tsmiLoadNotepad
+            // 
+            this.tsmiLoadNotepad.Name = "tsmiLoadNotepad";
+            this.tsmiLoadNotepad.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.L)));
+            this.tsmiLoadNotepad.Size = new System.Drawing.Size(331, 30);
+            this.tsmiLoadNotepad.Text = "Загрузить";
+            this.tsmiLoadNotepad.Click += new System.EventHandler(this.TsmiLoadNotepad_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -324,6 +411,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Name = "MainForm";
             this.Text = "Мои утилиты";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -333,6 +421,7 @@
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMinRandomRange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaxRandomRange)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,6 +451,14 @@
         private System.Windows.Forms.Button btnRandomCopy;
         private System.Windows.Forms.Button btnRandomClear;
         private System.Windows.Forms.TextBox tbRandomList;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton3;
+        private System.Windows.Forms.ToolStripMenuItem tsmiInsertDate;
+        private System.Windows.Forms.ToolStripMenuItem tsmiInsertTime;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsmiSaveNotepad;
+        private System.Windows.Forms.ToolStripMenuItem tsmiLoadNotepad;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.RichTextBox rtbNotepad;
     }
 }
 

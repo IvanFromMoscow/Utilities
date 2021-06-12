@@ -50,7 +50,7 @@ namespace Utilities
         {
             int n = rnd.Next(Convert.ToInt32(nudMinRandomRange.Value), Convert.ToInt32(nudMaxRandomRange.Value) + 1);
             lblRandom.Text = n.ToString();
-            if(cbRandomIsRepeat.Checked)
+            if (cbRandomIsRepeat.Checked)
             {
                 int i = 0;
                 while (tbRandomList.Text.IndexOf(n.ToString()) != -1)
@@ -58,10 +58,10 @@ namespace Utilities
                     n = rnd.Next(Convert.ToInt32(nudMinRandomRange.Value), Convert.ToInt32(nudMaxRandomRange.Value) + 1);
                     i++;
                     if (i > 1000) break;
-                    
+
                 }
-                if (i < 1000) tbRandomList.AppendText(n + Environment.NewLine);
-                
+                if (i <= 1000) tbRandomList.AppendText(n + Environment.NewLine);
+
             }
             else
             {
@@ -77,6 +77,50 @@ namespace Utilities
         private void BtnRandomCopy_Click(object sender, EventArgs e)
         {
             Clipboard.SetText(tbRandomList.Text);
+        }
+
+        private void TsmiInsertDate_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.AppendText(DateTime.Now.ToShortDateString() + "\n");
+        }
+
+        private void TsmiInsertTime_Click(object sender, EventArgs e)
+        {
+            rtbNotepad.AppendText(DateTime.Now.ToShortTimeString() + "\n");
+        }
+
+        public void LoadFile()
+        {
+            try
+            {
+                rtbNotepad.LoadFile("notepad.rtf");
+            }
+            catch
+            {
+                rtbNotepad.Clear();
+            }
+            
+        }
+        private void TsmiSaveNotepad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                rtbNotepad.SaveFile("notepad.rtf");
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка сохранения документа!", "Ошибка");
+            }
+        }
+
+        private void TsmiLoadNotepad_Click(object sender, EventArgs e)
+        {
+            LoadFile();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            LoadFile();
         }
     }
 }
