@@ -14,6 +14,8 @@ namespace Utilities
     {
         int count = 0;
         Random rnd;
+
+        char[] symbols = new char[] { '*', '&', '^', '%', '$', '#', '@', '!', '(', '<', ')', '>', '-', '+', '{', '}', '[', ']', '?' };
         public MainForm()
         {
             InitializeComponent();
@@ -121,6 +123,35 @@ namespace Utilities
         private void MainForm_Load(object sender, EventArgs e)
         {
             LoadFile();
+            cblPassword.SetItemChecked(0, true);
+            cblPassword.SetItemChecked(1, true);
+        }
+
+        private void BtnPasswordCreate_Click(object sender, EventArgs e)
+        {
+            string password = "";
+            if (cblPassword.CheckedItems.Count == 0) return;
+            for(int i=0; i < Convert.ToInt32(nudPasswordLenght.Value); i++)
+            {
+                string check_name = cblPassword.CheckedItems[rnd.Next(0, cblPassword.CheckedItems.Count)].ToString();
+                switch (check_name)
+                {
+                    case "Цифры":
+                        password += rnd.Next(10).ToString();
+                        break;
+                    case "Прописные буквы":
+                        password += Convert.ToChar(rnd.Next(65, 90));
+                        break;
+                    case "Строчные буквы":
+                        password += Convert.ToChar(rnd.Next(97, 122));
+                        break;
+                    default:
+                        password += symbols[rnd.Next(symbols.Length)];
+                        break;
+
+                }   
+            }
+            tbPassword.Text = password;
         }
     }
 }
