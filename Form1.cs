@@ -16,10 +16,15 @@ namespace Utilities
         Random rnd;
 
         char[] symbols = new char[] { '*', '&', '^', '%', '$', '#', '@', '!', '(', '<', ')', '>', '-', '+', '{', '}', '[', ']', '?' };
+        Dictionary<string, double> metrica;
+        
+
         public MainForm()
         {
             InitializeComponent();
             rnd = new Random();
+            
+            
         }
 
         private void tsimExit_Click(object sender, EventArgs e)
@@ -152,6 +157,55 @@ namespace Utilities
                 }   
             }
             tbPassword.Text = password;
+            Clipboard.SetText(password);
+        }
+
+        private void BtnConvert_Click(object sender, EventArgs e)
+        {
+            Double m1 = metrica[cbFrom.Text];
+            Double m2 = metrica[cbTo.Text];
+            Double n = Convert.ToDouble(tbFrom.Text);
+            tbTo.Text = (n * m1 / m2).ToString();
+
+        }
+
+        private void CbSwitchConverter_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string current_mode = cbSwitchConverter.Text;
+            switch(current_mode)
+            {
+                case "длина":
+                metrica = new Dictionary<string, double>() {
+                {"mm", 1 },
+                { "cm", 10},
+                {"dm", 100 },
+                { "m", 1000},
+                {"km", 1000000}
+               };
+                    cbFrom.Items.Clear();
+                    cbTo.Items.Clear();
+               cbFrom.Items.AddRange(new string[] { "mm", "cm", "dm", "m", "km" });
+               cbTo.Items.AddRange(new string[] { "mm", "cm", "dm", "m", "km" });
+                    cbFrom.Text = cbFrom.Items[0].ToString();
+                    cbTo.Text = cbTo.Items[0].ToString();
+                    break;
+                case "вес":
+                    metrica = new Dictionary<string, double>() {
+                {"g", 1 },
+                { "kg", 1000},
+                {"c", 100000},
+                { "t", 1000000}
+               };
+                    cbFrom.Items.Clear();
+                    cbTo.Items.Clear();
+                    cbFrom.Items.AddRange(new string[] { "g", "kg", "c", "t"});
+                    cbTo.Items.AddRange(new string[] { "g", "kg", "c", "t"});
+                    cbFrom.Text = cbFrom.Items[0].ToString();
+                    cbTo.Text = cbTo.Items[0].ToString();
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
